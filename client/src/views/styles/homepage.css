@@ -1,0 +1,283 @@
+html {
+    overflow-x: hidden;
+    height: 100%;
+}
+body {
+    font-family: var(--p-font);
+    overflow-x: hidden;
+}
+@font-face {
+    font-family: 'Evogria';
+    src: url('../fonts/evogria/Evogria.otf');
+}
+:root {
+    --header-font: 'Evogria', sans-serif;
+    --p-font: 'Poppins', sans-serif;
+}
+
+#mainContainer{
+   min-height: 41rem;
+}
+.bannerContainer {
+    transform: skewY(-5deg);
+    position: absolute;
+    max-width: 100%;
+}
+.banner {
+    color: black;
+    border: 2px black;
+    border-radius: 10px;    
+  
+}
+.card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card-dark {
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.55) !important;
+}
+.card-light {
+    background-color: rgba(241, 241, 241, 1) !important;
+}
+.dark {
+    color: white !important;
+    text-shadow: 2px 2px 9px rgba(255,255,255,0.4) !important;
+}
+#bannerTitle {
+    font-family: var(--header-font);
+}
+#bannerImg {
+    position: absolute;
+    right: 0;
+    max-width: 100%;
+    z-index: -1;
+}
+#navbarNav {
+    justify-content: end;
+}
+#middleTitle {
+    font-family: var(--header-font);
+}
+h1 {
+    font-family: var(--header-font);
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+  
+  .switch input {display:none;}
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;}
+
+#card1 {
+    color: #f1f1f1;
+    background-color: rgb(180, 82, 74);
+}
+
+#card3 {
+    color: #f1f1f1;
+    background-color: rgb(74, 118, 180);
+}
+@media screen and (max-width: 3000px) {
+    #logo {
+        margin-left: 3rem;
+    }
+    #bannerTitle{
+        font-size: 7rem;
+        text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.4);
+        font-style: italic;
+
+    }
+    #bannerSubtitle{
+        font-size: 2rem;
+        font-weight: 600;
+        font-style: italic;
+
+    }
+    #bannerFinaltitle{
+        font-size: 2rem;
+        font-weight: 300;
+    }
+    #bannerBtn {
+        width: 25%;
+    }
+    .bannerContainer {
+        max-width: 60%;
+    }
+    .banner{
+        padding: 2rem;
+        margin: 0rem 3rem 2rem 3rem;
+    }
+    #bannerImg {
+        z-index: 1;
+    }
+    #middleTitle {
+        font-size: 3rem;
+        
+    }
+    .navbar-nav {
+        align-items: end !important;
+    }
+
+}
+@media screen and (max-width: 1024px) {
+    #bannerTitle{
+        font-size: 4.25rem;
+        font-weight: 400;
+        text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.4);
+    }
+    #bannerSubtitle{
+        font-size: 2rem;
+        font-weight: 300;
+    }
+    #bannerFinaltitle{
+        font-size: 2rem;
+        font-weight: 200;
+    }
+
+    .bannerContainer {
+        max-width: 100%;
+    }
+    .banner{
+        margin: 0 ;
+    }
+    #bannerImg {
+        z-index: -1;
+    }
+    .hidden {
+        background: transparent;
+    }
+    
+}
+@media screen and (min-width: 2100px) and (max-width: 3000px) {
+    #bannerImg {
+        right: 25rem;
+    }
+    .bannerContainer {
+        left: 20rem;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 3000px) {
+    .card-img {
+        height: 217px;
+    }
+}
+@media screen and (min-width: 805px) and (max-width: 1024px) {
+    #mainCard {
+        width: 64rem;
+    }
+    
+}
+@media screen and (max-width: 768px) {
+    #bannerTitle{
+        font-size: 4.25rem;
+        font-weight: 400;
+        text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.4);
+    }
+    #bannerSubtitle{
+        font-size: 2rem;
+        font-weight: 300;
+    }
+    #bannerFinaltitle{
+        font-size: 2rem;
+        font-weight: 200;
+    }
+    #bannerImg {
+        top: 15rem;
+        width: auto !important;
+        height: auto !important;
+    }
+    .card-img {
+        max-height: 217px !important;
+    }
+    #bannerBtn {
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width: 575px) {
+    #navbar {
+        padding: 0;
+    }
+}
+@media screen and (max-width: 485px) {
+    #mainContainer{
+        min-height: 20rem;
+     }
+    #bannerTitle{
+        font-size: 2.5rem;  
+    }
+    #bannerSubtitle{
+        font-size: 1rem;
+    }
+    #bannerFinaltitle{
+        font-size: 1rem;
+    }
+    #logo {
+        align-self: center;
+    }
+    #navbar {
+        padding: 1rem !important;
+    }
+    #bannerImg {
+        width: auto !important;
+        height: auto !important;
+    }
+    #middleTitle {
+        font-size: 2rem;
+    }
+    .navbar-nav {
+        align-items: end !important;
+    }
+
+}
+@media screen and (max-width: 336px) {
+    .navbar-nav {
+        align-items: start !important;
+        }
+    }
