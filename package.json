@@ -6,10 +6,11 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --watch server --exec node server/server.js",
-    "server": "nodemon server/server.js",
-    "client": "npm start --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --force --prefix client && npm run build --prefix client"
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "start": "npm run dev",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"cd server && node server.js\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
