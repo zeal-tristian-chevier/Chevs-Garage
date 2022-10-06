@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const dbName = 'chevsgarage_db'
 
-mongoose.connect(`mongodb://localhost/${dbName}`, {
+mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/${dbName}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
