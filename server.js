@@ -1,9 +1,9 @@
 const express = require('express')
 const cors = require('cors')
-const {projectRouter} = require('./routes/project.routes')
+const {projectRouter} = require('./server/routes/project.routes')
 const port = 8000
 
-require('./config/mongoose.config')
+require('./server/config/mongoose.config')
 
 const app = express()
 
