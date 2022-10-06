@@ -3,10 +3,6 @@ const cors = require('cors')
 const {projectRouter} = require('./routes/project.routes')
 const port = 8000
 
-const mail = require('@sendgrid/mail')
-
-mail.setApiKey(process.env.SENDGRID_API_KEY)
-
 require('./config/mongoose.config')
 
 const app = express()
