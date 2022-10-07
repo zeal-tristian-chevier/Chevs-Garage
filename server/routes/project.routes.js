@@ -6,7 +6,6 @@ const {
     handleGetProjectById,
     handleDeleteProjectById,
     handleUpdateProjectById,
-    sendMail
 } = require('../controllers/project.controller')
 
 const router = express.Router()

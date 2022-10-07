@@ -22,12 +22,10 @@ const Homepage = (props) => {
 
         getAllProjects()
         .then((data) => {
-            console.log(data, "HERES DATA");
             setProjects(data)
-            
         })
         .catch((err) => {
-            console.log(err.response.request.response)
+            console.log(err)
         })
     }, [props.theme])
 
