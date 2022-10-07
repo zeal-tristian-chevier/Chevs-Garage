@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const http = axios.create({
-    baseURL: 'https://chevs-garage.herokuapp.com/'
+    baseURL: process.env.MONGODB_URI
 })
 export const getAllProjects = async() => {
     const res = await http.get('/')
