@@ -12,7 +12,6 @@ export const getProjectById = async(id) => {
     return res.data
 }
 export const createProject = async(data) => {
-    console.log(data)
     const res = await http.post(`/project/add`, data)
     return res.data
 }
