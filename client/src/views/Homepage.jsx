@@ -22,6 +22,7 @@ const Homepage = (props) => {
 
         getAllProjects()
         .then((data) => {
+            console.log(data)
             setProjects(data)
         })
         .catch((err) => {
