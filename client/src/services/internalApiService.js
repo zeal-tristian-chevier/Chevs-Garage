@@ -1,8 +1,7 @@
 import axios from 'axios'
 
 const http = axios.create({
-    baseURL: 'https://chevs-garage.herokuapp.com/'
-
+    baseURL: 'http://localhost:8000' || 'https://chevs-garage.herokuapp.com'
 })
 export const getAllProjects = async() => {
     const res = await http.get('/')
