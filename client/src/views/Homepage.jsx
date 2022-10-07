@@ -22,10 +22,12 @@ const Homepage = (props) => {
 
         getAllProjects()
         .then((data) => {
+            console.log(data, "HERES DATA");
             setProjects(data)
+            
         })
         .catch((err) => {
-            console.log(err)
+            console.log(err.response.request.response)
         })
     }, [props.theme])
 
@@ -93,7 +95,7 @@ const Homepage = (props) => {
             <div className="col-12">
             <div id="carouselExampleIndicators" className={`carousel carousel-${themeOpposite} slide`} data-bs-ride="true">
                 {
-                    document.body.clientWidth < 768 ?
+                    document.body.clientWidth < 768?
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                     {
@@ -115,6 +117,7 @@ const Homepage = (props) => {
                     }                   
                 </div>
                 :
+                
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                     {
@@ -136,7 +139,7 @@ const Homepage = (props) => {
                         })
                     }     
                     </div>              
-                </div>
+                </div> 
                 }
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
