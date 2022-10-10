@@ -19,10 +19,9 @@ const Homepage = (props) => {
 
     useEffect(() => {
         setTheme(props.theme)
-
         getAllProjects()
         .then((data) => {
-            console.log(data)
+            console.log("HELLO")
             setProjects(data)
         })
         .catch((err) => {

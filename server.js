@@ -12,14 +12,15 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cors())
 
-app.use('/', projectRouter)
+// app.use('/', projectRouter)
 
 if (process.env.NODE_ENV === "production") {
   console.log("PRODUCTION MODE ACTIVE");
-  //app.use('/', express.static("/client/build"));
-  app.use(express.static("./client/build"));
+
+  app.use(express.static(path.join(__dirname, "/client/build")))
+
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './client/build','index.html'));
+    res.sendFile(path.join(__dirname, './client/build','index.html'));
   })
 }
 
