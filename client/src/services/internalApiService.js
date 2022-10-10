@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const http = axios.create({
-    baseURL: `http://localhost:${process.env.PORT}`
+    baseURL: `http://localhost:5000`
 })
 export const getAllProjects = async() => {
     const res = await http.get('/')
