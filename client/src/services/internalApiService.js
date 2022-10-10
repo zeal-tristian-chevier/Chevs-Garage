@@ -5,7 +5,6 @@ const http = axios.create({
 })
 export const getAllProjects = async() => {
     const res = await http.get('/')
-    console.log(red.data)
     return res.data
 }
 export const getProjectById = async(id) => {
