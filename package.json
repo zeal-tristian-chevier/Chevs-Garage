@@ -7,6 +7,7 @@
   },
   "main": "server.js",
   "scripts": {
+    "build": "cd client && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js && npm run dev",
     "client": "npm start --prefix client",
