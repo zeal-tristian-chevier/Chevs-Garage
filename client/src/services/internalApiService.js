@@ -1,10 +1,11 @@
 import axios from 'axios'
 
 const http = axios.create({
-    baseURL: `http://localhost:5000`
+    baseURL: `http://localhost:8000`
 })
 export const getAllProjects = async() => {
     const res = await http.get('/')
+    console.log(res.data, "THIS IS DATA")
     return res.data
 }
 export const getProjectById = async(id) => {
