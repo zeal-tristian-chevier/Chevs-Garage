@@ -12,7 +12,6 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cors())
 
-app.use('/', projectRouter)
 
 if (process.env.NODE_ENV === "production") {
   console.log("PRODUCTION MODE ACTIVE");
