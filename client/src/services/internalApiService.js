@@ -1,10 +1,10 @@
 import axios from 'axios'
 
 const http = axios.create({
-    baseURL: process.env.MONGODB_URI
+    baseURL: `http://localhost:8000`
 })
 export const getAllProjects = async() => {
-    const res = await http.get('/')
+    const res = await http.get('/api')
     return res.data
 }
 // export const getProjectById = async(id) => {
