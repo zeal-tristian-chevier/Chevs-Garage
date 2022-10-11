@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const path = require('path')
 const {projectRouter} = require('./server/routes/project.routes')
-const port = 8000
+const port = process.env.PORT || 8000
 
 require('./server/config/mongoose.config')
 
