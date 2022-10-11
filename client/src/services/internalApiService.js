@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const http = axios.create({
-    baseURL: `http://localhost:${process.env.PORT}`
+    baseURL: `https://chevs-garage.herokuapp.com:${process.env.PORT}`
 })
 export const getAllProjects = async() => {
     const res = await http.get('/api')
