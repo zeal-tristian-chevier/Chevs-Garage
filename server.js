@@ -23,6 +23,6 @@ if (process.env.NODE_ENV === "production") {
   })
 }
 
-app.use('/', projectRouter)
+
 
 app.listen(port, () => console.log(`Listening on Port: ${port}`))
