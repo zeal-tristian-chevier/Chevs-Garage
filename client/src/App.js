@@ -28,7 +28,7 @@ function App() {
         </button>
         <div className="collapse navbar-collapse mt-3 me-5" id="navbarNav">
           <ul className="navbar-nav" >
-            <div className="me-3 d-flex align-items-center">
+            <div className="d-flex align-items-center">
               <label className="switch me-3">
                 <input type="checkbox" onClick={handleTheme} value={theme} />
                 <span className="slider round"></span>

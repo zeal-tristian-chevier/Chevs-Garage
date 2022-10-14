@@ -3,11 +3,22 @@ import emailjs from 'emailjs-com'
 
 const Contact = (props) => {
     const [theme, setTheme] = useState(props.theme)
-    const [nameError, setNameError] = useState("")
-    const [emailError, setEmailError] = useState("")
+    const [isSent, setIsSent] = useState(false)
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: "",
+    })
+    const [errors, setErrors] = useState({
+        name: "",
+        email: "",
+        message: "",
+    })
+
     useEffect(() => {
         setTheme(props.theme)
     }, [props.theme])
+
     let themeOpposite = 'black';
     if(theme === 'light'){
         themeOpposite = 'black'
@@ -18,37 +29,105 @@ const Contact = (props) => {
         document.body.classList.add('bg-dark')
         document.body.classList.remove('bg-light')
       }
+
+    const handleChange = (e) => {
+        switch(e.target.name){
+            case 'name':
+            setFormData({
+                ...formData,
+                name: e.target.value
+            })
+            if(e.target.value.length < 1){
+                setErrors({
+                    ...errors,
+                    name: "Name is required "
+                })
+            }
+            if(e.target.value.length > 0){
+                setErrors({
+                    ...errors,
+                    name: ""
+                })
+            }
+            break;
+            case 'email':   
+            setFormData({
+                ...formData,
+                email: e.target.value
+            })
+            let regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            let email = e.target.value.toLowerCase()
+            setErrors({
+                ...errors,
+                email: "Invalid Email "
+                })
+            if(e.target.value.length < 1){
+            setErrors({
+                ...errors,
+                email: "Email is required"
+            })
+            }
+            if(email.match(regex)){
+                setErrors({
+                    ...errors,
+                    email: ""
+                })
+            }
+            break;
+            case 'message':
+            setFormData({
+                ...formData,
+                message: e.target.value
+            })
+            if(e.target.value.length > 0){
+                setErrors({
+                    ...errors,
+                    message: "Message must be at least 10 characters"
+                })
+                }
+            if(e.target.value.length >= 10){
+                setErrors({
+                    ...errors,
+                    message: ""
+                })
+            }
+            break;
+            default:
+            break;
+        }
+    }
     
-    const handleName = (e) => {
-        let len = e.target.value.length
-        if(len < 1){
-            setNameError("Name is required!")
-        } else if(len < 3){
-            setNameError("Name must be at least 2 characters")
-        } else if(len > 2){
-            setNameError("")
-        }
-    }
-    const handleEmail = (e) => {
-        let len = e.target.value.length
-        if(len < 1){
-            setEmailError("Email is required!")
-        } else{
-            setNameError("")
-        }
-    }
     const sendEmail = (e) => {
-
         e.preventDefault();
-
-        emailjs.sendForm('service_9jqamxm', 'template_ff4q1f6', e.target, 'ZNqOJhp6SxlmkYlrL')
-          .then((result) => {
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-          });
-
-          e.target.reset();
+        if(formData.name.length === 0){
+            setErrors({
+                name: "Name is required",
+            })
+        }
+        if(formData.email.length === 0){
+            setErrors({
+                email: "Email is required",
+            })
+        }
+        if(formData.message.length === 0){
+            setErrors({
+                message: "Message is required",
+            })
+        }
+        if((errors.name.length === 0 && errors.email.length === 0 && errors.message.length === 0)
+         && (formData.name.length > 0 && formData.email.length > 0 && formData.message.length > 0)){
+            emailjs.sendForm('service_9jqamxm', 'template_ff4q1f6', e.target, 'ZNqOJhp6SxlmkYlrL')
+            .then((result) => {
+                setIsSent(true)
+            }, (error) => {
+                console.log(error);
+            });
+            setFormData({
+                name: "",
+                email: "",
+                message: "",
+            })
+        } 
     }
 
     return (
@@ -71,19 +150,19 @@ const Contact = (props) => {
                         <>
                         <div className="row mb-3">
                         <div className="col">
-                            <input className='form-control' type="text" placeholder='Name' onChange={handleName}/>
+                            <input className='form-control' type="text" name='name' placeholder='Name' onChange={handleChange} value={formData.name} />
                                 {
-                                    nameError ?
-                                    <p style={{color:'red'}}>{ nameError }</p> :
+                                    errors.name ?
+                                    <p style={{color:'red'}}>{ errors.name }</p> :
                                     ''
                                 }
                         </div>
                         
                         <div className="col">
-                            <input className='form-control' type="email" placeholder='Email' required onChange={handleEmail}/>
+                            <input className='form-control' type="text" name='email' placeholder='Email' onChange={handleChange} value={formData.email}/>
                                 {
-                                    emailError ?
-                                    <p style={{color:'red'}}>{ emailError }</p> :
+                                    errors.email ?
+                                    <p style={{color:'red'}}>{ errors.email }</p> :
                                     ''
                                 }
                         </div>
@@ -92,25 +171,30 @@ const Contact = (props) => {
                             <h3 className={`${theme}`}>Choose Two:</h3>
                             <div className="form-check">
                                 <input className={`${theme} form-check-input`} type="checkbox" value="Quality" name="quality" id="quality"/>
-                                <label className={`${theme} form-check-label`} for="quality">
+                                <label className={`${theme} form-check-label`} htmlFor="quality">
                                     Quality
                                 </label>
                                 </div>
                             <div className="form-check">
                                 <input className={`${theme} form-check-input`} type="checkbox" value="Cheap" name="cheap" id="cheap"/>
-                                <label className={`${theme} form-check-label`} for="cheap">
+                                <label className={`${theme} form-check-label`} htmlFor="cheap">
                                     Cheap
                                 </label>
                             </div>
                             <div className="form-check">
                                 <input className={`${theme} form-check-input`} type="checkbox" value="Fast" name="fast" id="fast"/>
-                                <label className={`${theme} form-check-label`} for="fast">
+                                <label className={`${theme} form-check-label`} htmlFor="fast">
                                     Fast
                                 </label>
                             </div>
                         </div>
                         <div className="mb-3">
-                            <textarea className='form-control' cols="30" rows="5" placeholder='Enter a message...' name='message'></textarea>
+                            <textarea className='form-control' cols="30" rows="5" placeholder='Enter a message...' name='message' onChange={handleChange} value={formData.message}></textarea>
+                            {
+                                    errors.message ?
+                                    <p style={{color:'red'}}>{ errors.message }</p> :
+                                    ''
+                                }
                         </div>
                         <div>
                                 <button className="btn w-50 p-2" style={{backgroundColor: 'rgb(13,43,228)', color: 'white', fontWeight: 'bold'}}>Send {'>'}</button>
@@ -119,19 +203,18 @@ const Contact = (props) => {
                         :
                         <>
                         <div className="mb-3">
-                            <input className='form-control' type="text" placeholder='Name' onChange={handleName}/>
+                            <input className='form-control' type="text" placeholder='Name' name='name' onChange={ handleChange} value={formData.name}/>
                                 {
-                                    nameError ?
-                                    <p style={{color:'red'}}>{ nameError }</p> :
+                                    errors.name?
+                                    <p style={{color:'red'}}>{ errors.name }</p> :
                                     ''
                                 }
                         </div>
-                        
                         <div className="mb-3">
-                            <input className='form-control' type="email" placeholder='Email' required onChange={handleEmail}/>
+                            <input className='form-control' type="text" placeholder='Email' name='email' onChange={ handleChange} value={formData.email}/>
                                 {
-                                    emailError ?
-                                    <p style={{color:'red'}}>{ emailError }</p> :
+                                    errors.email?
+                                    <p style={{color:'red'}}>{ errors.email }</p> :
                                     ''
                                 }
                         </div>
@@ -139,25 +222,30 @@ const Contact = (props) => {
                         <div className="d-flex mb-3 justify-content-around align-items-center">
                         <div className="form-check">
                             <input className={`${theme} form-check-input`} type="checkbox" value="Quality"/>
-                            <label className={`${theme} form-check-label`} for="flexCheckDefault">
+                            <label className={`${theme} form-check-label`} >
                                 Quality
                             </label>
                             </div>
                         <div className="form-check">
                             <input className={`${theme} form-check-input`} type="checkbox" value="Cheap"/>
-                            <label className={`${theme} form-check-label`} for="flexCheckChecked">
+                            <label className={`${theme} form-check-label`} >
                                 Cheap
                             </label>
                         </div>
                         <div className="form-check">
                             <input className={`${theme} form-check-input`} type="checkbox" value="Fast"/>
-                            <label className={`${theme} form-check-label`} for="flexCheckChecked">
+                            <label className={`${theme} form-check-label`}>
                                 Fast
                             </label>
                         </div>
                         </div>
                         <div className="mb-3">
-                            <textarea className='form-control' name="" id="" cols="30" rows="5" placeholder='Enter a message...' required></textarea>
+                            <textarea className='form-control' name="message" id="" cols="30" rows="5" placeholder='Enter a message...' onChange={handleChange} value={formData.message}></textarea>
+                            {
+                                    errors.message?
+                                    <p style={{color:'red'}}>{ errors.message }</p> :
+                                    ''
+                            }
                         </div>
                         <div>
                             <button className="btn w-100" style={{backgroundColor: 'rgb(13,43,228)', color: 'white', fontWeight: 'bold'}}>Send {'>'}</button>
@@ -166,6 +254,31 @@ const Contact = (props) => {
                         }
                     </form>
                 </div>
+                {
+                    document.body.clientWidth > 768 && isSent ?
+                    <div className={`bg-${themeOpposite} position-absolute w-100`} style={{top: "25%", opacity: "85%"}}>
+                        <div className="text-center p-5">
+                            <h1 className='text-success'>Your message was sent!</h1>
+                            <p className='text-success'>We will get back to you as soon as possible!</p>
+                            <button className='btn btn-success mt-3' onClick={() => setIsSent(false)}>Ok</button>
+                        </div>
+                    </div>
+                    :
+                    ''
+                    
+                }
+                {
+                    document.body.clientWidth < 768 && isSent ?
+                    <div className={`bg-${themeOpposite} position-absolute w-100`} style={{top: "40%", opacity: "85%"}}>
+                        <div className="text-center p-5">
+                            <h1 className='text-success'>Your message was sent!</h1>
+                            <p className='text-success'>We will get back to you as soon as possible!</p>
+                            <button className='btn btn-success mt-3' onClick={() => setIsSent(false)}>Ok</button>
+                        </div>
+                    </div>
+                    :
+                    ''
+                }
                     {
                         document.body.clientWidth > 768 ?
                         <div className="col-lg-5 text-center d-flex flex-column p-5 pt-0">
@@ -184,7 +297,10 @@ const Contact = (props) => {
                         <div className="col-lg-5 text-center d-flex flex-column pt-5">
                         <h1 className={`display-5 ${theme} mb-3`}>Contact Info</h1>
                         <p className={`${theme}`}>We believe in getting the help you need. Please feel free to email or call us with any questions.</p>
+                        <div className="text-center">
                         <img className="image-fluid mt-3 mb-3" style={{width: "300px", height: "150px"}} src={ require('./imgs/icontransparent2.png') } alt=""/>
+
+                        </div>
                         <div className='mb-3'>
                         <h3 className={`${theme}`}>chevs.llc@gmail.com</h3>
                         <h3 className={`${theme}`}>817-260-5322</h3>
