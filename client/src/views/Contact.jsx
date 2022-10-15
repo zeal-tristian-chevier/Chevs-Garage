@@ -296,7 +296,7 @@ const Contact = (props) => {
                         :
                         <div className="col-lg-5 text-center d-flex flex-column pt-5">
                         <h1 className={`display-5 ${theme} mb-3`}>Contact Info</h1>
-                        <p className={`${theme}`}>We believe in getting the help you need. Please feel free to email or call us with any questions.</p>
+                        <p className={`${theme}`}>We believe in getting you the help you need. Please feel free to email or call us with any questions.</p>
                         <div className="text-center">
                         <img className="image-fluid mt-3 mb-3" style={{width: "300px", height: "150px"}} src={ require('./imgs/icontransparent2.png') } alt=""/>
 

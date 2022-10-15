@@ -61,6 +61,9 @@ const Homepage = (props) => {
                         <box-icon name='check-circle' type='solid' color='#fcfcfc' ></box-icon>
                         </div>
                         <p className='mt-2'>This Service is best for quality work. We want your ATV to be in the best shape and repaired in OE fashion.</p>
+                        <p>
+                        QUALITY service CHEAP won't be FAST
+                        </p>
                     </Card>  
                     <Card id="card2" className='col-lg-3 p-5'>
                         <div className="text-center">
@@ -68,6 +71,9 @@ const Homepage = (props) => {
                         <box-icon type='solid' name='wallet'></box-icon>
                         </div>
                         <p className='mt-2'>This Service is best when you're on a budget. We know you are most likely on a budget.</p>
+                        <p>
+                        FAST service CHEAP won't be QUALITY
+                        </p>
                     </Card>
                     <Card id="card3" className='col-lg-3 p-5'>
                         <div className="text-center">
@@ -75,6 +81,9 @@ const Homepage = (props) => {
                         <box-icon name='timer' type='solid' color='#fcfcfc' ></box-icon>
                         </div>
                         <p className='mt-2'>This Service is best for speed. We understand you might have a deadline .</p>
+                        <p>
+                        QUALITY service FAST won't be CHEAP
+                        </p>
                     </Card>
                 </div>
                 <div className='text-center m-5'>
