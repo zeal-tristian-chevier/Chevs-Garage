@@ -72,7 +72,7 @@ const Homepage = (props) => {
                         </div>
                         <p className='mt-2'>This Service is best when you're on a budget. We know you are most likely on a budget.</p>
                         <p>
-                        FAST service CHEAP won't be QUALITY
+                        CHEAP service FAST won't be QUALITY
                         </p>
                     </Card>
                     <Card id="card3" className='col-lg-3 p-5'>
@@ -82,7 +82,7 @@ const Homepage = (props) => {
                         </div>
                         <p className='mt-2'>This Service is best for speed. We understand you might have a deadline .</p>
                         <p>
-                        QUALITY service FAST won't be CHEAP
+                        FAST service CHEAP won't be QUALITY
                         </p>
                     </Card>
                 </div>
