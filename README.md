@@ -1,4 +1,4 @@
-# Chev's Garage - http://www.chevsgarage.com/
+# Chev's Garage - https://www.chevsgarage.com/
 
  An ATV Repair website for a real company in Haslet, Texas made to allow customers contact the owner and display his past projects.
 
