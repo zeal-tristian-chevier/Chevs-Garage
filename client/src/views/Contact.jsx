@@ -303,7 +303,7 @@ const Contact = (props) => {
                         </div>
                         <div className='mb-3'>
                         <h3 className={`${theme}`}>chevs.llc@gmail.com</h3>
-                        <h3 className={`${theme}`}>817-260-5322</h3>
+                        <h3 className={`${theme}`}>817-360-5322</h3>
                         <a className={`${theme}`} href="https://www.google.com/maps/place/13261+Willow+Creek+Dr,+Haslet,+TX+76052/@32.9711953,-97.4037582,17.35z/data=!4m13!1m7!3m6!1s0x864dddb7bf8a84c1:0x815f369a67b19062!2sWillow+Creek+Dr,+Texas+76052!3b1!8m2!3d32.972291!4d-97.4036024!3m4!1s0x864dddc8367db65f:0x44c464fd2f79efea!8m2!3d32.9708021!4d-97.4033607" target={'_blank'} rel="noreferrer"><box-icon color={themeOpposite} type='solid' name='been-here'></box-icon></a>
                         </div>
                         </div>
