@@ -6,6 +6,7 @@ import { Link, Routes, Route } from 'react-router-dom'
 import React, { useState } from 'react'
 
 function App() {
+  const currentYear = new Date().getFullYear()
   const [theme, setTheme] = useState('light')
   const handleTheme = () => {
     if(theme === 'light'){
@@ -53,13 +54,13 @@ function App() {
         document.body.clientWidth > 768 ?
         <footer className="text-center text-white fixed-bottom">
         <div className="text-center p-3 pt-5" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-          © 2022 Copyright: Chev's Garage - All Rights Reserved
+          @{currentYear} Copyright: Chev's Garage - All Rights Reserved
         </div>
         </footer>
         :
         <footer className="text-center text-white" style={{bottom: '0'}}>
         <div className="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-          © 2022 Copyright: Chev's Garage - All Rights Reserved
+          @{currentYear} Copyright: Chev's Garage - All Rights Reserved
         </div>
         </footer>
       }
