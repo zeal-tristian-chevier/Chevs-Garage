@@ -461,6 +461,7 @@ const Contact = (props) => {
                                     src={require("./imgs/icontransparent2.png")}
                                     alt=""
                                 />
+
                                 <div>
                                     <h3 className={`${theme}`}>
                                         chevs.llc@gmail.com
