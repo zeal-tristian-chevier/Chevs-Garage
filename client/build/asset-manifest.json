@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5211825a.css",
+    "main.js": "/static/js/main.368628f6.js",
+    "static/js/787.d5fa4d18.chunk.js": "/static/js/787.d5fa4d18.chunk.js",
+    "static/media/DarkMode.png": "/static/media/DarkMode.c68243d3e5e7828ad715.png",
+    "static/media/icontransparent.png": "/static/media/icontransparent.69c529961f4763e02ea2.png",
+    "static/media/Evogria Pic.png": "/static/media/Evogria Pic.53df1f097856f9c449b8.png",
+    "static/media/image1.webp": "/static/media/image1.16981eabb82ec744f13a.webp",
+    "static/media/image11.webp": "/static/media/image11.530e19c03262d7573a2d.webp",
+    "static/media/image7.webp": "/static/media/image7.cf688862f2f4d679c425.webp",
+    "static/media/icontransparent2.png": "/static/media/icontransparent2.9dc37fc71d0ae1723521.png",
+    "static/media/image16.webp": "/static/media/image16.a6d151b32b7ae7f34e90.webp",
+    "static/media/image15.webp": "/static/media/image15.ebd90a0b1d41027812b4.webp",
+    "static/media/image13.webp": "/static/media/image13.576ac436e4130f2f79d8.webp",
+    "static/media/image9.webp": "/static/media/image9.58a03a4b82e3cc27fbd0.webp",
+    "static/media/image12.webp": "/static/media/image12.d6d52327c38997fc8e30.webp",
+    "static/media/image14.webp": "/static/media/image14.aaac0eb85062da383cc9.webp",
+    "static/media/image4.webp": "/static/media/image4.f4b07df11fc3ed83ded5.webp",
+    "static/media/image10.webp": "/static/media/image10.b1132bf6926103f6d5d0.webp",
+    "static/media/image5.webp": "/static/media/image5.d17dedfcebfd94486028.webp",
+    "static/media/image8.webp": "/static/media/image8.76f05831bf80b42dde7d.webp",
+    "static/media/image8dark.webp": "/static/media/image8dark.e66ed85e0fb0dafef60b.webp",
+    "static/media/image6.webp": "/static/media/image6.e28f91ee67aee2de2907.webp",
+    "static/media/iconround.png": "/static/media/iconround.ab83ef3a49ab0855fcfa.png",
+    "static/media/Evogria Italic.otf": "/static/media/Evogria Italic.0799e2f328e4bc87f01d.otf",
+    "static/media/Evogria.otf": "/static/media/Evogria.f90e5f33987b13d9c840.otf",
+    "static/media/Accredited Business Seal in Black.jpg": "/static/media/Accredited Business Seal in Black.6ee47b9fafd35df61296.jpg",
+    "static/media/icon..png": "/static/media/icon..3e20f41c359c3b6a66c2.png",
+    "static/media/BBBblack.png": "/static/media/BBBblack.dca44f6822ad2a3cdfb9.png",
+    "static/media/BBBblack.jpg": "/static/media/BBBblack.c995e0c6b3c16d2c26b2.jpg",
+    "index.html": "/index.html",
+    "static/media/License.txt": "/static/media/License.262b23ef5f771e523cbb.txt",
+    "main.5211825a.css.map": "/static/css/main.5211825a.css.map",
+    "main.368628f6.js.map": "/static/js/main.368628f6.js.map",
+    "787.d5fa4d18.chunk.js.map": "/static/js/787.d5fa4d18.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5211825a.css",
+    "static/js/main.368628f6.js"
+  ]
+}
