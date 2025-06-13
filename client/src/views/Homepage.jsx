@@ -42,9 +42,6 @@ const Homepage = (props) => {
             name: "2009 Polaris RZR 800",
         },
     ];
-    // const [projects, setProjects] = useState([]);
-
-    //Fetch projects from the backend
 
     useEffect(() => {
         setTheme(props.theme);

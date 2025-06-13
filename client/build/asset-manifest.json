@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.5211825a.css",
-    "main.js": "/static/js/main.368628f6.js",
-    "static/js/787.d5fa4d18.chunk.js": "/static/js/787.d5fa4d18.chunk.js",
+    "main.css": "/static/css/main.e5dec136.css",
+    "main.js": "/static/js/main.3f0d0411.js",
+    "static/js/496.a447188c.chunk.js": "/static/js/496.a447188c.chunk.js",
     "static/media/DarkMode.png": "/static/media/DarkMode.c68243d3e5e7828ad715.png",
     "static/media/icontransparent.png": "/static/media/icontransparent.69c529961f4763e02ea2.png",
     "static/media/Evogria Pic.png": "/static/media/Evogria Pic.53df1f097856f9c449b8.png",
@@ -27,16 +27,14 @@
     "static/media/Evogria.otf": "/static/media/Evogria.f90e5f33987b13d9c840.otf",
     "static/media/Accredited Business Seal in Black.jpg": "/static/media/Accredited Business Seal in Black.6ee47b9fafd35df61296.jpg",
     "static/media/icon..png": "/static/media/icon..3e20f41c359c3b6a66c2.png",
-    "static/media/BBBblack.png": "/static/media/BBBblack.dca44f6822ad2a3cdfb9.png",
-    "static/media/BBBblack.jpg": "/static/media/BBBblack.c995e0c6b3c16d2c26b2.jpg",
     "index.html": "/index.html",
     "static/media/License.txt": "/static/media/License.262b23ef5f771e523cbb.txt",
-    "main.5211825a.css.map": "/static/css/main.5211825a.css.map",
-    "main.368628f6.js.map": "/static/js/main.368628f6.js.map",
-    "787.d5fa4d18.chunk.js.map": "/static/js/787.d5fa4d18.chunk.js.map"
+    "main.e5dec136.css.map": "/static/css/main.e5dec136.css.map",
+    "main.3f0d0411.js.map": "/static/js/main.3f0d0411.js.map",
+    "496.a447188c.chunk.js.map": "/static/js/496.a447188c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5211825a.css",
-    "static/js/main.368628f6.js"
+    "static/css/main.e5dec136.css",
+    "static/js/main.3f0d0411.js"
   ]
 }
