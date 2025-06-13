@@ -445,8 +445,8 @@ const Contact = (props) => {
                         ""
                     )}
                     {document.body.clientWidth > 768 ? (
-                        <div className="col-lg-5 text-center d-flex flex-column p-5 pt-0">
-                            <div className="mb-4 mt-4">
+                        <div className="col-lg-5 text-center justify-center d-flex flex-column p-5 pt-0">
+                            <div className="mb-4 mt-4 flex flex-col items-center">
                                 <h1 className={`display-5 ${theme} mb-3`}>
                                     Contact Info
                                 </h1>
